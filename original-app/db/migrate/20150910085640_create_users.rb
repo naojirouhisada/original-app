@@ -5,9 +5,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_kanji
       t.string :first_kanamoji
       t.string :last_kanamoji
-      t.string :first_romaji
-      t.string :last_romaji
-      t.string :affiliation
+      t.string :first_name
+      t.string :last_name
+      t.string :high_school
+      t.string :university
+      t.string :work_for
       t.string :email
       t.string :email_confirmation
       t.string :country

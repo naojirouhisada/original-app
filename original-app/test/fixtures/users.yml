@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_kanji: MyString
+  last_kanji: MyString
+  first_kanamoji: MyString
+  last_kanamoji: MyString
+  first_romaji: MyString
+  last_romaji: MyString
+  affiliation: MyString
+  email: MyString
+  email_confirmation: MyString
+  country: MyString
+  postal_code: MyString
+  prefecture: MyString
+  municipality_address: MyString
+  b_name/r_name: MyString
+  phone_number: MyString
+  telephone_number: MyString
+  passward_digest: MyString
+  passward_digest_confirmation: MyString
+
+two:
+  first_kanji: MyString
+  last_kanji: MyString
+  first_kanamoji: MyString
+  last_kanamoji: MyString
+  first_romaji: MyString
+  last_romaji: MyString
+  affiliation: MyString
+  email: MyString
+  email_confirmation: MyString
+  country: MyString
+  postal_code: MyString
+  prefecture: MyString
+  municipality_address: MyString
+  b_name/r_name: MyString
+  phone_number: MyString
+  telephone_number: MyString
+  passward_digest: MyString
+  passward_digest_confirmation: MyString

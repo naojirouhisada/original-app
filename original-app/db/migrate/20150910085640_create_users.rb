@@ -1,0 +1,29 @@
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.string :first_kanji
+      t.string :last_kanji
+      t.string :first_kanamoji
+      t.string :last_kanamoji
+      t.string :first_romaji
+      t.string :last_romaji
+      t.string :affiliation
+      t.string :email
+      t.string :email_confirmation
+      t.string :country
+      t.string :postal_code
+      t.string :prefecture
+      t.string :municipality_address
+      #brname => build_name or room_name
+      t.string :br_name 
+      t.string :phone_number
+      t.string :telephone_number
+      t.string :passward_digest
+      t.string :passward_digest_confirmation
+
+      t.timestamps null: false
+      
+      t.index :email, unique: true 
+    end
+  end
+end

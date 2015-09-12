@@ -20,8 +20,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :br_name 
       t.string :phone_number
       t.string :telephone_number
-      t.string :passward_digest
-      t.string :passward_digest_confirmation
+      t.string :password_digest
+      t.string :password_digest_confirmation
 
       t.timestamps null: false
       

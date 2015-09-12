@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 20150910085640) do
     t.string   "last_kanji"
     t.string   "first_kanamoji"
     t.string   "last_kanamoji"
-    t.string   "first_romaji"
-    t.string   "last_romaji"
-    t.string   "affiliation"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "high_school"
+    t.string   "university"
+    t.string   "work_for"
     t.string   "email"
     t.string   "email_confirmation"
     t.string   "country"
@@ -30,8 +32,8 @@ ActiveRecord::Schema.define(version: 20150910085640) do
     t.string   "br_name"
     t.string   "phone_number"
     t.string   "telephone_number"
-    t.string   "passward_digest"
-    t.string   "passward_digest_confirmation"
+    t.string   "password_digest"
+    t.string   "password_digest_confirmation"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end

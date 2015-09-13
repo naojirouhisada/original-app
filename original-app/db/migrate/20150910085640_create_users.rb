@@ -21,7 +21,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone_number
       t.string :telephone_number
       t.string :password_digest
-      t.string :password_digest_confirmation
 
       t.timestamps null: false
       

@@ -33,9 +33,8 @@ ActiveRecord::Schema.define(version: 20150910085640) do
     t.string   "phone_number"
     t.string   "telephone_number"
     t.string   "password_digest"
-    t.string   "password_digest_confirmation"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

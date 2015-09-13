@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       :first_kanji , :last_kanji , :first_kanamoji , :last_kanamoji , :first_name,
       :last_name , :high_school , :university , :work_for , :email , :email_confirmation,
       :country , :postal_code , :prefecture , :municipality_address , :br_name , :phone_number,
-      :telephone_number , :password_digest , :password_digest_confirmation
+      :telephone_number , :password, :password_confirmation
       )
   end
 end

@@ -1,2 +1,11 @@
-<%= @user.first_kanji %>
-<%= @user.last_kanji %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-7 col-xs-offset-1">
+            <p><%= @user.first_kanji %><%= @user.last_kanji %></p>
+            <%= link_to '基本情報',edit_user_path(@user) %>
+        </div>
+        <div class="col-md-4">
+            
+        </div>
+    </div>
+</div>

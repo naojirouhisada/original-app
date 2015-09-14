@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+           
+            <%= form_for(@user) do |f| %>
+            <%= render 'shared/error_messages',object: f.object %>
+            
+                <p>
+                    <%= f.label :first_kanji, '漢字(姓)' %>
+                    <%= f.text_field :first_kanji %>
+                    <%= f.label :last_kanji,'漢字(名)' %>
+                    <%= f.text_field :last_kanji %>
+                </p>
+                <p>
+                    <%= f.label :first_kanamoji, 'カナ(姓)' %>
+                    <%= f.text_field :first_kanamoji %>
+                    <%= f.label :last_kanamoji,'カナ(名)' %>
+                    <%= f.text_field :last_kanamoji %>
+                </p>
+                <p>
+                    <%= f.label :first_name,'ローマ字(姓)' %>
+                    <%= f.text_field :first_name %>
+                    <%= f.label :last_name,'ローマ字(名)' %>
+                    <%= f.text_field :last_name %>
+                </p>
+                <p>
+                    <%= f.label :high_school,'高校' %>
+                    <%= f.text_field :high_school %>
+                </p>
+                <p>
+                    <%= f.label :university,'大学' %>
+                    <%= f.text_field :university %>
+                </p>
+                <p>
+                    <%= f.label :work_for,'勤務先' %>
+                    <%= f.text_field :work_for %>
+                </p>
+                <p>
+                    <%= f.label :emai,'メールアドレス' %>
+                    <%= f.email_field :email %>
+                </p>
+                <p>
+                    <%= f.label :email_confirmation,'確認用' %>
+                    <%= f.email_field :email_confirmation %>
+                </p>
+                <p>
+                    <%= f.label :country , '国名' %>
+                    <%= f.text_field :country %>
+                </p>
+                <p>
+                    <%= f.label :postal_code,'郵便番号' %>
+                    <%= f.text_field :postal_code %>
+                </p>
+                <p>
+                    <%= f.label :prefecture,'県名' %>
+                    <%= f.text_field :prefecture %>
+                </p>
+                <p>
+                    <%= f.label :municipality_address, '市町村' %>
+                    <%= f.text_field :municipality_address %>
+                </p>
+                <p>
+                    <%= f.label :br_name , '建物名/部屋番号' %>
+                    <%= f.text_field :br_name  %>
+                </p>
+                <p>
+                    <%= f.label :phone_number, '電話番号' %>
+                    <%= f.telephone_field :phone_number %>
+                </p>
+                <p>
+                    <%= f.label :telephone_number,'携帯電話番号' %>
+                    <%= f.telephone_field :telephone_number %>
+                </p>
+                <p>
+                    <%= f.label :password,'パスワード' %>
+                    <%= f.password_field :password %>
+                </p>
+                <p>
+                    <%= f.label :password_confirmation,'確認用' %>
+                    <%= f.password_field :password_confirmation %>
+                </p>
+                
+                <%= f.submit '更新' %>
+            <% end %>
+        </div>
+    </div>
+</div>

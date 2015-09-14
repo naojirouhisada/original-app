@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :update]
   def new
     @user = User.new
   end
@@ -17,6 +18,21 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    if @user.update(user_params)
+      # 保存に成功した場合はトップページへリダイレクト
+      redirect_to root_path , notice: 'Profileを編集しました'
+    else
+      # 保存に失敗した場合は編集画面へ戻す
+      render 'edit'
+    end
+  end
+    
+  
   private 
   
   def user_params
@@ -26,5 +42,9 @@ class UsersController < ApplicationController
       :country , :postal_code , :prefecture , :municipality_address , :br_name , :phone_number,
       :telephone_number , :password, :password_confirmation
       )
+  end
+  
+   def set_user
+    @user = User.find(params[:id])
   end
 end

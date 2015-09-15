@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
     validates :password_confirmation,length: {minimum:8}
     
     has_secure_password
+    has_many :microposts
 end

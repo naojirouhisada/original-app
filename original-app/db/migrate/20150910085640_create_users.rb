@@ -15,7 +15,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :country
       t.string :postal_code
       t.string :prefecture
-      t.string :municipality_address
+      t.string :municipality
+      t.string :town_area_address
       #brname => build_name or room_name
       t.string :br_name 
       t.string :phone_number

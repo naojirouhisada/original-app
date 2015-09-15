@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts
   end
   
   def edit
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :first_kanji , :last_kanji , :first_kanamoji , :last_kanamoji , :first_name,
       :last_name , :high_school , :university , :work_for , :email , :email_confirmation,
-      :country , :postal_code , :prefecture , :municipality_address , :br_name , :phone_number,
+      :country , :postal_code , :prefecture , :municipality,:town_area_address , :br_name , :phone_number,
       :telephone_number , :password, :password_confirmation
       )
   end

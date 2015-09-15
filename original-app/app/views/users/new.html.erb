@@ -57,9 +57,15 @@
                     <%= f.text_field :prefecture %>
                 </p>
                 <p>
-                    <%= f.label :municipality_address, '市町村' %>
-                    <%= f.text_field :municipality_address %>
+                    <%= f.label :municipality, '市町村' %>
+                    <%= f.text_field :municipality %>
                 </p>
+                
+                <p>
+                    <%= f.label :town_area_address, '町域・番地' %>
+                    <%= f.text_field :town_area_address %>
+                </p>
+                
                 <p>
                     <%= f.label :br_name , '建物名/部屋番号' %>
                     <%= f.text_field :br_name  %>

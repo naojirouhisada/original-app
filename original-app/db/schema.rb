@@ -11,42 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914161936) do
+ActiveRecord::Schema.define(version: 20151104025224) do
 
-  create_table "microposts", force: :cascade do |t|
-    t.integer  "user_id"
-    t.text     "content"
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "phone_number"
+    t.string   "email"
+    t.string   "password"
+    t.integer  "employee"
+    t.integer  "capital"
+    t.integer  "sales"
+    t.string   "representative"
+    t.datetime "establishment"
+    t.string   "description"
+    t.string   "industry"
+    t.string   "type_of_industry"
+    t.string   "site_name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string   "country"
+    t.string   "prefecture"
+    t.string   "city"
+    t.string   "town_area"
+    t.integer  "address"
+    t.string   "building"
+    t.string   "room"
+    t.datetime "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
-
   create_table "users", force: :cascade do |t|
     t.string   "first_kanji"
     t.string   "last_kanji"
-    t.string   "first_kanamoji"
-    t.string   "last_kanamoji"
+    t.string   "first_kana"
+    t.string   "last_kana"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "gender"
+    t.datetime "birth"
+    t.string   "password"
+    t.string   "email"
+    t.string   "work_place"
     t.string   "high_school"
     t.string   "university"
-    t.string   "work_for"
-    t.string   "email"
-    t.string   "email_confirmation"
-    t.string   "country"
-    t.string   "postal_code"
-    t.string   "prefecture"
-    t.string   "municipality"
-    t.string   "town_area_address"
-    t.string   "br_name"
-    t.string   "phone_number"
-    t.string   "telephone_number"
-    t.string   "password_digest"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "graduate_school"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

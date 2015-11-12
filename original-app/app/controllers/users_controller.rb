@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
+    
+    
+    
+    def show 
+        @user = User.find(params[:id])
+    end
+    
     def new
         @user = User.new
     end
     
     def create
         @user = User.new(user_params)
-        
         if @user.save
             flash[:success] = "新規登録が完了しました。"
             redirect_to @user
@@ -18,7 +24,9 @@ class UsersController < ApplicationController
     
     def user_params
         params.require(:user).permit(:first_kanji,:last_kanji,:first_kana,:last_kana,:first_name , 
-        :last_name , :gender , :birth , :password , :email , :work_place , :high_school , :university , 
-        :graduate_school )
+        :last_name , :gender , :birth , :password , :password_confirmation, :email , :work_place , 
+        :high_school , :university , :graduate_school )
     end
+    
+   
 end

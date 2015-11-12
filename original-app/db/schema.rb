@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20151104025224) do
     t.string   "last_name"
     t.string   "gender"
     t.datetime "birth"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "email"
     t.string   "work_place"
     t.string   "high_school"
@@ -62,5 +62,7 @@ ActiveRecord::Schema.define(version: 20151104025224) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

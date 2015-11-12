@@ -1,3 +1,6 @@
 class User < ActiveRecord::Base
-    belongs_to :member,foreign_key: 'user_id'
+    belongs_to :member
+    
+    has_secure_password
+    
 end

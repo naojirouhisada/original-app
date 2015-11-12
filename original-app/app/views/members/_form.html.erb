@@ -1,0 +1,40 @@
+<%= form_for(@member) do |f| %>
+
+<p>
+    <%= f.label :country , '国名' %>
+    <%= f.text_field :country %>
+</p>
+
+<p>
+    <%= f.label :prefecture , '県名'%>
+    <%= f.text_field :prefecture %>
+</p>
+
+<p>
+    <%= f.label :city , '市区町村' %>
+    <%= f.text_field :city %>
+</p>
+
+<p>
+    <%= f.label :town_area , '町域' %>
+    <%= f.text_field :town_area %>
+</p>
+
+<p>
+   <%= f.label :address , '番地' %>
+   <%= f.text_field :address %>
+</p>
+
+<p>
+    <%= f.label :building , '建物名' %>
+    <%= f.text_field :building %>
+</p>
+
+<p>
+    <%= f.label :room , '号棟・階数・号室' %>
+    <%= f.text_field :room %>
+</p>
+
+<%= f.submit '登録' %>
+
+<% end %>

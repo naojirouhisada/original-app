@@ -16,6 +16,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :university
       t.string :graduate_school
       
+      
       t.index :email , unique: true
 
       t.timestamps null: false

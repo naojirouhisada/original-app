@@ -1,13 +1,14 @@
 class MembersController < ApplicationController
-    skip_before_action :check_logined
+  
     def new
-        @member = Member.new
+         @member = Member.new
     end
     
     def create
         @member = Member.new(member_params)
         if @member.save
-            redirect_to @member
+            
+            redirect_to user_path
         else
             render 'new'
         end
@@ -16,6 +17,8 @@ class MembersController < ApplicationController
     private
     
     def member_params
-        params.require(:member).permit(:country,:prefecture,:city,:town_area,:address,:building,:room,:datetime)
+        params.require(:member).permit(:country,:prefecture,:city,:town_area,
+            :address,:building,:room,:datetime,
+        )
     end
 end

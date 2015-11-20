@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-    belongs_to :member
-    
+    has_one :member
     has_secure_password
+    
+    accepts_nested_attributes_for :member
+    
     
 end

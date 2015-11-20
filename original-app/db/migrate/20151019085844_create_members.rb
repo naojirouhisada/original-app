@@ -9,6 +9,8 @@ class CreateMembers < ActiveRecord::Migration
       t.string :building
       t.string :room
       t.datetime :datetime
+      t.references :user , index: true
+      t.references :company , index: true
 
       t.timestamps null: false
     end

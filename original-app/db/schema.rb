@@ -40,9 +40,14 @@ ActiveRecord::Schema.define(version: 20151104025224) do
     t.string   "building"
     t.string   "room"
     t.datetime "datetime"
+    t.integer  "user_id"
+    t.integer  "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "members", ["company_id"], name: "index_members_on_company_id"
+  add_index "members", ["user_id"], name: "index_members_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_kanji"

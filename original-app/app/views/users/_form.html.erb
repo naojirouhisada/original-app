@@ -23,16 +23,45 @@
 <%= f.label :gender,'女性' %>
 <%= f.radio_button :gender , '女性' %></p>
 
-<p><%= f.label :email,'メールアドレス' %>
-<%= f.email_field :email %></p>
-
-<p><%= f.label :password,'パスワード'%>
-<%= f.password_field :password %></p>
+<%= f.fields_for :member do |member_form| %>
 
 <p>
-    <%= f.label :password_confirmation , 'パスワード確認' %>
-    <%= f.password_field :password_cofirmation %>
+    <%= member_form.label :country , '国名' %>
+    <%= member_form.text_field :country %>
 </p>
+
+<p>
+    <%= member_form.label :prefecture , '県名'%>
+    <%= member_form.text_field :prefecture %>
+</p>
+
+<p>
+    <%= member_form.label :city , '市区町村' %>
+    <%= member_form.text_field :city %>
+</p>
+
+<p>
+    <%= member_form.label :town_area , '町域' %>
+    <%= member_form.text_field :town_area %>
+</p>
+
+<p>
+   <%= member_form.label :address , '番地' %>
+   <%= member_form.text_field :address %>
+</p>
+
+<p>
+    <%= member_form.label :building , '建物名' %>
+    <%= member_form.text_field :building %>
+</p>
+
+<p>
+    <%= member_form.label :room , '号棟・階数・号室' %>
+    <%= member_form.text_field :room %>
+</p>
+
+<% end %>
+
 
 <p><%= f.label :birth, '生年月日' %>
 <%= f.date_field :birth %></p>
@@ -48,6 +77,17 @@
 
 <p><%= f.label :graduate_school , '大学院' %>
 <%= f.text_field :graduate_school %></p>
+
+<p><%= f.label :email,'メールアドレス' %>
+<%= f.email_field :email %></p>
+
+<p><%= f.label :password,'パスワード'%>
+<%= f.password_field :password %></p>
+
+<p>
+    <%= f.label :password_confirmation , 'パスワード確認' %>
+    <%= f.password_field :password_cofirmation %>
+</p>
 
 <%= f.submit '登録' %>
 <% end %>

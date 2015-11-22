@@ -1,3 +1,9 @@
 <p><%= micropost.user.first_kanji %> <%= micropost.user.last_kanji %>さん<br />
 
 <%= micropost.content %></p>
+
+<%- if current_user == micropost.user %>
+
+<%= link_to "削除", micropost , method: :delete , data:{confirm: "削除してよろしいですか？"} %>
+
+<% end %>

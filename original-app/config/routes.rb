@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :members
+  resources :microposts
   
   resources :sessions, only: [:new,:create, :destroy]
   

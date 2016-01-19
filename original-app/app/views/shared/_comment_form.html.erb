@@ -1,0 +1,10 @@
+
+<%= form_for(@comment) do |f| %>
+
+    <%= f.text_field :content %>
+    
+    <%= hidden_field_tag :micropost_id , @micropost.id %>
+
+
+    <%= f.submit '投稿' %>
+<% end %>

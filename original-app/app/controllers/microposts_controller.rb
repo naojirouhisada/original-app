@@ -1,10 +1,14 @@
 class MicropostsController < ApplicationController
     before_action :logged_in_user , only: [:create]
-    
+
     def create
         @micropost = current_user.microposts.build(micropost_params)
+        
+        @user = @micropost.user
+
         if @micropost.save
-            flash[:success]  = "記事を投稿しました。"
+            
+            flash[:success]  = "created micropost!"
             redirect_to root_path
         else
             render 'static_pages/home'

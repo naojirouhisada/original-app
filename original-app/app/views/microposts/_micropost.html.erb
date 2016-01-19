@@ -1,6 +1,14 @@
+<% @micropost = micropost %>
 <p><%= micropost.user.first_kanji %> <%= micropost.user.last_kanji %>さん<br />
 
-<%= micropost.content %></p>
+
+<%= micropost.content %>
+
+
+
+<%= render @comments %>
+<%= render 'shared/comment_form' %>
+
 
 <%- if current_user == micropost.user %>
 

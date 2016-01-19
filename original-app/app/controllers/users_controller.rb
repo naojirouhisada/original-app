@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
+
     before_action :set_user, only: [:show , :edit , :update ]
     
     def show
         @user = User.find(params[:id])
         @microposts = @user.microposts
+        @comment = current_user.comments.build
+        @comments = @user.comments
+       
     end
     
     def new

@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   
   
-  resources :users
+  resources :users do
+    get :infomarion , on: :member
+  end
   resources :members
   resources :microposts
   resources :comments
   
   resources :sessions, only: [:new,:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   
 
   # The priority is based upon order of creation: first created -> highest priority.

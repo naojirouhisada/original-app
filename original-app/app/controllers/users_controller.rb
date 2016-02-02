@@ -5,9 +5,14 @@ class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         @microposts = @user.microposts
-        @comment = current_user.comments.build
+        @comment = @user.comments.build
         @comments = @user.comments
-       
+     
+    end
+    
+    def information
+        @user = User.find(params[:id])
+        @follower = @follower_users.user
     end
     
     def new

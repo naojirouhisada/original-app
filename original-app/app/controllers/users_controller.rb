@@ -7,12 +7,23 @@ class UsersController < ApplicationController
         @microposts = @user.microposts
         @comment = @user.comments.build
         @comments = @user.comments
+        
+        if current_user.follower_relationships.any?
+            @follower_relationships = current_user.follower_relationships.find_by(params[:follow_id] == @user.id) 
+        end
+        
+           
+      
+        
      
     end
-    
+
     def information
         @user = User.find(params[:id])
-        @follower = @follower_users.user
+        @followers = @user.follower_users
+        @follower_relationships = @user.follower_relationships
+        
+ 
     end
     
     def new

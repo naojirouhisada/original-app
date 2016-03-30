@@ -1,0 +1,36 @@
+
+<% followers = @followers.to_enum 
+     follower_relationships = @follower_relationships.to_enum %>
+    
+   
+    <% loop do
+        follower                = followers.next
+        follower_relationship   = follower_relationships.next %>
+
+<% if follower_relationship.status == 'allow' %>
+
+
+<% else %>
+    <hr >        
+         <p><%=  follower.first_kana + "さんが友達申請をしてきました。"  %><br />
+                   <%= "友達申請を承認しますか?" %></p>
+        
+
+        <%= form_for(follower_relationship,:url =>{ :controller => "relationships" , :action => "update",:id => "#{follower_relationship.id}" }, remote: true) do |f| %>
+            
+         
+            
+            <%= p follower_relationship.follow_id  %>
+              <%= hidden_field_tag :follow_id , follower_relationship.follow_id %>
+                <%=f.hidden_field :status  %>
+                
+
+                <%= f.submit "承認"%>
+                <hr >
+           
+            <% end %>          
+            
+            
+        <% end %>
+<% end %>
+ 

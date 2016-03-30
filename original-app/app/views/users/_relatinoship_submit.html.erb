@@ -1,0 +1,14 @@
+<div id = "relationship<%= follower_relationship.id %>">
+    
+  
+    <p>
+        <%= "#{follower_relationship.follow.first_kana}さんが友達申請をしてきました。" %><br />
+        <%= "友達申請を承認しますか?" %>
+    </p>
+
+
+    <%= link_to "承認", {controller: :relationships, action: :update, id: follower_relationship.id }, method: :put, remote: true %>
+
+    
+</div>
+

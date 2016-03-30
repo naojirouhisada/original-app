@@ -9,14 +9,15 @@ Rails.application.routes.draw do
   
   
   resources :users do
-    get :infomarion , on: :member
+    get :information , on: :member
   end
   resources :members
   resources :microposts
   resources :comments
   
   resources :sessions, only: [:new,:create, :destroy]
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy,:update,:edit]
+    
   
 
   # The priority is based upon order of creation: first created -> highest priority.

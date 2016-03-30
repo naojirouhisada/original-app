@@ -1,14 +1,22 @@
 
 
-<%= form_for(current_user.following_relationships.build , remote: true) do |f| %>
+    <%= form_for(current_user.following_relationships.build , remote: true) do |f| %>
+    
+        <%= hidden_field_tag :followed_id , @user.id %>
+        
+        <%= f.hidden_field :status %>
+        
+   
+        <%= f.submit "友達になる" %>
+        
+        
 
-<%= hidden_field_tag :followed_id , @user.id %>
-
-<%= f.hidden_field :status %>
+    <% end %>
 
 
 
-<%= f.submit "友達になる" %>
 
-
-<% end %>
+    
+    
+    
+  

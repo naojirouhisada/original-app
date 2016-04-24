@@ -1,0 +1,10 @@
+<% if @succeed %>
+
+    $(".comment_field").val('');
+    
+    $("#comments<%=@micropost.id %>").html("<%= escape_javascript(render partial: 'comments/comment' , collection: @micropost.comments )%>" );
+    
+
+<% else %>
+    
+<% end %>

@@ -1,9 +1,16 @@
+<hr />
+<div id="comment<%=comment.id %>">
+    
+   
+    
+    <p><%= link_to " #{comment.user.first_kanji}", user_path %>さんがしたコメント</p>
+    <p><%= comment.content %></p>
+    
+    
+
+    
+</div>
 
 
-<% if comment.micropost_id == @micropost.id %>
 
-<p><%= comment.content %></p>
-
-
-<% end %>
 

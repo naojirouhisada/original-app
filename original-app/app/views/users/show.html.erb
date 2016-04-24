@@ -1,4 +1,5 @@
 
+
 <%= @user.first_kanji%>
 
 
@@ -6,11 +7,12 @@
 
 <%= render 'follow_form' if logged_in? %>
 
-
+<hr />
 
 <% if @user.microposts.any? %>
 
-<%= render @microposts %>
+<%= render partial: 'microposts/micropost', collection: @microposts %>
+       
 
 
 <% end %>

@@ -1,14 +1,14 @@
  <% if current_user.following?(@user) %>
- <% @following_relationships = current_user.following_relationships.find_by(followed_id: @user.id) %>
-    <%= form_for(@following_relationships,
-        html: { method: :delete },
-        remote: true) do |f| %>
-        
-        
+     <% @following_relationships = current_user.following_relationships.find_by(followed_id: @user.id) %>
+        <%= form_for(@following_relationships,
+            html: { method: :delete },
+            remote: true) do |f| %>
+            
+            
     
         <%= hidden_field_tag :followed_id , @user.id %>
         
-        <% if current_user.following?(@user) && @following_relationships.status == '' or nil %>
+        <% if current_user.following?(@user) && @following_relationships.status == 0 %>
             
             <%= f.submit "友達申請待ち…" ,disabled: true   %>
             
@@ -18,7 +18,8 @@
         
         
     
-    <% end %>
+     <% end %>
+    
 <% else %>
 
     <%= form_for(current_user.follower_relationships.find_by(follow_id: @user.id),

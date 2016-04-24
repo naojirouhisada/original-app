@@ -3,7 +3,7 @@ class CreateRelationships < ActiveRecord::Migration
     create_table :relationships do |t|
       t.references :follow, index: true
       t.references :followed, index: true
-      t.string :status
+      t.integer :status
 
       t.timestamps null: false
       

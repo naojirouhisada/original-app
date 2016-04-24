@@ -38,7 +38,7 @@ class RelationshipsController < ApplicationController
         @succeed = false
 
         
-        if @follower_relationship.update(status: 'allow')
+        if @follower_relationship.update(status: 1)
 
           
             @succeed = true

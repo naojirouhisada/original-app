@@ -1,0 +1,23 @@
+<hr />
+<div id="comment<%=comment.id %>">
+    <% @comment = comment %>
+    
+   
+    <p><%= link_to " #{comment.user.first_kanji}", user_path %>さんがしたコメント</p>
+    <p><%= comment.content %></p>
+    
+
+    
+    <div id="replays<%= comment.id %>">
+        <%= render partial: 'user/replays/replay',collection: @comment.replays %>
+    </div>
+    
+    
+    <%= render  partial:'user/shared/replay_form' %>
+
+
+</div>
+
+
+
+

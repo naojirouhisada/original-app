@@ -1,0 +1,15 @@
+
+
+
+<%= form_for(@comments,remote: true) do |f| %>
+    
+
+    <%= f.text_field :content , class: "comment_field" %>
+    
+    <%= hidden_field_tag :micropost_id , @micropost.id %>
+    
+
+   
+
+    <%= f.submit 'コメントする' %>
+<% end %>

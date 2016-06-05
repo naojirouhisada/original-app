@@ -9,6 +9,13 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :gender
       t.datetime :birth
+      t.string :country
+      t.string :prefecture
+      t.string :city
+      t.string :town_area
+      t.integer :address
+      t.string :building
+      t.string :room
       t.string :password_digest
       t.string :email
       t.string :work_place

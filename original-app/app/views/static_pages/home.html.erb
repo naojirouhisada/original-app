@@ -3,10 +3,12 @@
 <% if logged_in? %>
 
 
-<%= render 'shared/micropost_form' %>
+<%= render 'user/shared/micropost_form' %>
 
 <% else %>
 
-<%= link_to '新規登録はこちら' , signup_path %>
+<p><%= link_to 'ユーザの新規登録はこちら' , signup_path %></p>
+
+<p><%= link_to '企業様の新規登録はこちら' , :new_company %></p>
 
 <% end %>

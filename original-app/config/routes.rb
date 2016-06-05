@@ -1,22 +1,49 @@
 Rails.application.routes.draw do
   
   root to: 'static_pages#home'
-
-  get 'signup' , to: 'users#new'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
   
-  
-  resources :users do
-    get :information , on: :member
+  scope module: :user do
+    get 'signup' , to: 'users#new'
+    get    'login'   => 'sessions#new'
+    post   'login'   => 'sessions#create'
+    delete 'logout'  => 'sessions#destroy'
+    resources :users do
+      get :information , on: :member
+    end
+    resources :members, only: [:create, :destroy,:update,:edit]
+    resources :microposts, only: [:create, :destroy,:update,:edit]
+    resources :comments, only: [:create, :destroy,:update,:edit]
+    resources :replays, only: [:create, :destroy,:update,:edit]
+    
+    resources :sessions, only: [:new,:create, :destroy]
+    resources :relationships, only: [:create, :destroy,:update,:edit]
   end
-  resources :members
-  resources :microposts
-  resources :comments
   
-  resources :sessions, only: [:new,:create, :destroy]
-  resources :relationships, only: [:create, :destroy,:update,:edit]
+  scope module: :corporation do
+    resources :companies
+    
+    
+  end
+  
+
+#  get 'signup' , to: 'users#new'
+#  get    'login'   => 'sessions#new'
+#  post   'login'   => 'sessions#create'
+#  delete 'logout'  => 'sessions#destroy'
+  
+
+  
+  
+#  resources :users do
+#    get :information , on: :member
+#  end
+#  resources :members
+#  resources :microposts
+#  resources :comments
+#  resources :replays
+  
+#  resources :sessions, only: [:new,:create, :destroy]
+#  resources :relationships, only: [:create, :destroy,:update,:edit]
     
   
 

@@ -1,0 +1,68 @@
+<%= form_for(@company) do |f| %>
+    <p>
+        <%= f.label :name ,'会社名' %>
+        <%= f.text_field :name %>
+    </p>
+    
+    <p>
+        <%= f.label :country , '国名' %>
+        <%= f.text_field :country %>
+    </p>
+    
+    <p>
+        <%= f.label :prefecture , '県名'%>
+        <%= f.text_field :prefecture %>
+    </p>
+    
+    <p>
+        <%= f.label :city , '市区町村' %>
+        <%= f.text_field :city %>
+    </p>
+    
+    <p>
+        <%= f.label :town_area , '町域' %>
+        <%= f.text_field :town_area %>
+    </p>
+    
+    <p>
+       <%= f.label :address , '番地' %>
+       <%= f.text_field :address %>
+    </p>
+    
+    <p>
+        <%= f.label :building , '建物名' %>
+        <%= f.text_field :building %>
+    </p>
+    
+    <p>
+        <%= f.label :room , '号棟・階数・号室' %>
+        <%= f.text_field :room %>
+    </p>
+    
+    <p>
+        <%= f.label :establishment, '設立日' %>
+        <%= f.text_field :establishment %>
+    </p>
+    
+    <p>
+        <%= f.label :industry , '業界' %>
+        <%= f.text_field :industry %>
+    </p>
+    
+    <p>
+        <%= f.label :type_of_industry , '業種' %>
+        <%= f.text_field :type_of_industry %>
+    </p>
+    
+    <p>
+        <%= f.label :site_name , 'サイト名' %>
+        <%= f.text_field :site_name %>
+    </p>
+    
+    <p>
+        <%= f.label :description ,  'サイト説明' %>
+        <%= f.text_area :description %>
+    </p>
+    
+    <%= f.submit '登録' %>
+<% end %>

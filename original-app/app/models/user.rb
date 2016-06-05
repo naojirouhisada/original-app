@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     has_one :member
     has_many :microposts
     has_many :comments
+    has_many :replays
     
     has_many :following_relationships, class_name: "Relationship" , foreign_key: "follow_id" , dependent: :destroy
     has_many :following_users , through: :following_relationships , source: :followed
@@ -17,6 +18,7 @@ class User < ActiveRecord::Base
     accepts_nested_attributes_for :member
 
     def follow(other_user ,status)
+        
        
         following_relationships.create(followed_id: other_user.id , status: status.status)
         
@@ -42,7 +44,18 @@ class User < ActiveRecord::Base
     def follower?(other_user)
         follower_users.include?(other_user)
     end
+    SECRET = SecureRandom::hex(128)
+    def encryptor(id)
+        
+        encryptor = ::ActiveSupport::MessageEncryptor.new(SECRET, cipher: 'aes-256-cbc')
+        encrypt_id = encryptor.encrypt_and_sign(id)
+        return  encrypt_id
+    end
     
+    def decrypt(id)
+        encryptor = ::ActiveSupport::MessageEncryptor.new(SECRET, cipher: 'aes-256-cbc')
+        return encryptor.decrypt_and_verify(id)
+    end
     
     
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120075445) do
+ActiveRecord::Schema.define(version: 20160424162425) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -39,11 +39,6 @@ ActiveRecord::Schema.define(version: 20160120075445) do
     t.string   "industry"
     t.string   "type_of_industry"
     t.string   "site_name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "members", force: :cascade do |t|
     t.string   "country"
     t.string   "prefecture"
     t.string   "city"
@@ -51,15 +46,9 @@ ActiveRecord::Schema.define(version: 20160120075445) do
     t.integer  "address"
     t.string   "building"
     t.string   "room"
-    t.datetime "datetime"
-    t.integer  "user_id"
-    t.integer  "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
-
-  add_index "members", ["company_id"], name: "index_members_on_company_id"
-  add_index "members", ["user_id"], name: "index_members_on_user_id"
 
   create_table "microposts", force: :cascade do |t|
     t.string   "content"
@@ -83,6 +72,18 @@ ActiveRecord::Schema.define(version: 20160120075445) do
   add_index "relationships", ["follow_id"], name: "index_relationships_on_follow_id"
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
 
+  create_table "replays", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "replays", ["comment_id"], name: "index_replays_on_comment_id"
+  add_index "replays", ["user_id", "comment_id", "created_at"], name: "index_replays_on_user_id_and_comment_id_and_created_at"
+  add_index "replays", ["user_id"], name: "index_replays_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "first_kanji"
     t.string   "last_kanji"
@@ -92,6 +93,13 @@ ActiveRecord::Schema.define(version: 20160120075445) do
     t.string   "last_name"
     t.string   "gender"
     t.datetime "birth"
+    t.string   "country"
+    t.string   "prefecture"
+    t.string   "city"
+    t.string   "town_area"
+    t.integer  "address"
+    t.string   "building"
+    t.string   "room"
     t.string   "password_digest"
     t.string   "email"
     t.string   "work_place"

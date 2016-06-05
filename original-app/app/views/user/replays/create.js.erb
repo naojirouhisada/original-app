@@ -1,0 +1,10 @@
+<% if @succeed %>
+
+
+    
+    $("#replays<%= @comment.id %>").html("<%= escape_javascript(render partial: 'user/replays/replay',collection: @comment.replays )%>" );
+    
+
+<% else %>
+    
+<% end %>

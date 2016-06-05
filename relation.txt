@@ -1,0 +1,12 @@
+class CreateRelationships < ActiveRecord::Migration
+  def change
+    create_table :relationships do |t|
+      t.references :make_friend, index: true, foreign_key: true
+      t.references :become_friend, index: true, foreign_key: true
+
+      t.timestamps null: false
+      
+      t.index [:make_friend_id,:become_friend_id],unique: true
+    end
+  end
+end

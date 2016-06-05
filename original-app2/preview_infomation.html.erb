@@ -1,0 +1,34 @@
+<% @follower_relationships.each do |follower_relationship| %>
+    <% @followers.each do |follower| %>
+    <%= form_for(follower_relationship,:url =>{ :controller => "relationships" , :action => "update" }, remote: true) do |f| %>
+    
+     <p><%=  follower.first_kana + "さんが友達申請をしてきました。"  %><br />
+           <%= "友達申請を承認しますか?" %></p>
+    
+    
+      
+        <%=f.hidden_field :status %>
+        
+        
+        <%= f.submit "承認"%>
+    
+    
+    
+    
+    <% end %>
+    
+    <% next %>
+    <% end %>
+   
+<% end %> 
+
+
+   
+
+  
+
+   
+
+   
+
+

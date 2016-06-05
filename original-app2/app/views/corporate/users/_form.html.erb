@@ -1,0 +1,33 @@
+<%= form_for(@user) do |f| %>
+    <p>
+        <%= f.label :login_id ,'ログインID' %>
+        <%= f.text_field :login_id %>
+    </p>
+    
+    <p>
+        <%= f.label :last_name , '姓' %>
+        <%= f.text_field :last_name %>
+    </p>
+    
+    <p>
+        <%= f.label :first_name ,'名' %>
+        <%= f.text_field :first_name %>
+    </p>
+    
+    <p>
+        <%= f.label :email , 'メールアドレス' %>
+        <%= f.email_field :email %>
+    </p>
+    
+    <p>
+        <%= f.label :password,'パスワード'%>
+        <%= f.password_field :password %>
+    </p>
+    
+    <p>
+        <%= f.label :password_confirmation , 'パスワード確認' %>
+        <%= f.password_field :password_cofirmation %>
+    </p>
+    
+    <%= f.submit '送信' %>
+<% end %>

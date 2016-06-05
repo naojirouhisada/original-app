@@ -1,0 +1,18 @@
+=> [32m#<User:0x007f3b5b6483c0[0m
+ id: [1;34m3[0m,
+ first_kanji: [31m[1;31m"[0m[31mじろう[1;31m"[0m[31m[0m,
+ last_kanji: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ first_kana: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ last_kana: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ first_name: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ last_name: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ gender: [1;36mnil[0m,
+ birth: [1;36mnil[0m,
+ password_digest: [31m[1;31m"[0m[31m$2a$10$MI0spfZzQUZxsyD1BDNGVeyWT0q5UJwh.PGUqQXOhJBt1Wa7BWRem[1;31m"[0m[31m[0m,
+ email: [31m[1;31m"[0m[31mjirou@example.com[1;31m"[0m[31m[0m,
+ work_place: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ high_school: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ university: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ graduate_school: [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ created_at: [1;34;4mSat[0m, [1;34m23[0m [1;34;4mApr[0m [1;34m2016[0m [1;34m17[0m:[1;34m09[0m:[1;34m38[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+ updated_at: [1;34;4mSat[0m, [1;34m23[0m [1;34;4mApr[0m [1;34m2016[0m [1;34m17[0m:[1;34m09[0m:[1;34m38[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m

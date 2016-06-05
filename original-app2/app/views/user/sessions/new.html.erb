@@ -1,0 +1,17 @@
+
+
+ <%= form_for(:session, url: login_path) do |f| %>
+    <div class="field">
+        <%= f.label :email , 'メールアドレス' %>
+        <%= f.email_field :email%>
+    </div>
+    <div class="field">
+        <%= f.label :password , 'パスワード' %>
+        <%= f.password_field :password %>
+    </div>
+    <%= f.submit  'ログイン' %>
+    
+<% end %>
+
+<p>新しいユーザー？</p>
+<%= link_to "新規登録はこちら！",signup_path %>

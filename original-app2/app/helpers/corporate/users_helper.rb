@@ -1,0 +1,2 @@
+module Corporate::UsersHelper
+end

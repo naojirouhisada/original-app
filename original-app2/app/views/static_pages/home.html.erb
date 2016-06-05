@@ -1,0 +1,14 @@
+x<h1>StaticPages#home</h1>
+<p>Find me in app/views/static_pages/home.html.erb</p>
+<% if logged_in? %>
+
+
+<%= render 'user/shared/micropost_form' %>
+
+<% else %>
+
+<p><%= link_to 'ユーザの新規登録はこちら' , signup_path %></p>
+
+<p><%= link_to '企業様の新規登録はこちら' , :new_corporate_user %></p>
+
+<% end %>

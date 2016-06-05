@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_kanji: MyString
+  last_kanji: MyString
+  first_kana: MyString
+  last_kana: MyString
+  first_name: MyString
+  last_name: MyString
+  gender: MyString
+  birth: 2015-11-03 08:42:41
+  work_place: MyString
+  high_school: MyString
+  university: MyString
+  graduate_school: MyString
+
+two:
+  first_kanji: MyString
+  last_kanji: MyString
+  first_kana: MyString
+  last_kana: MyString
+  first_name: MyString
+  last_name: MyString
+  gender: MyString
+  birth: 2015-11-03 08:42:41
+  work_place: MyString
+  high_school: MyString
+  university: MyString
+  graduate_school: MyString

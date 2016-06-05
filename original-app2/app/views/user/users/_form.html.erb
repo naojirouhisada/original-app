@@ -1,0 +1,93 @@
+<%= form_for(@user) do |f| %>
+
+<p><%= f.label :first_kanji ,'漢字(姓)' %>
+<%= f.text_field :first_kanji %>
+
+<%= f.label :last_kanji ,'漢字(名)' %>
+<%= f.text_field :last_kanji %></p>
+
+<p><%= f.label :first_kana ,'カナ(姓)' %>
+<%= f.text_field :first_kana %>
+
+<%= f.label :last_kana ,'カナ(名)' %>
+<%= f.text_field :last_kana %></p>
+
+<p><%= f.label :first_name ,'ローマ字(姓)' %>
+<%= f.text_field :first_name %>
+
+<%= f.label :last_name ,'ローマ字(名)' %>
+<%= f.text_field :last_name %></p>
+
+<p><%= f.label :gender,'男性' %>
+<%= f.radio_button :gender , '男性' %>
+<%= f.label :gender,'女性' %>
+<%= f.radio_button :gender , '女性' %></p>
+
+<%= f.fields_for :member do |member_form| %>
+
+<p>
+    <%= member_form.label :country , '国名' %>
+    <%= member_form.text_field :country %>
+</p>
+
+<p>
+    <%= member_form.label :prefecture , '県名'%>
+    <%= member_form.text_field :prefecture %>
+</p>
+
+<p>
+    <%= member_form.label :city , '市区町村' %>
+    <%= member_form.text_field :city %>
+</p>
+
+<p>
+    <%= member_form.label :town_area , '町域' %>
+    <%= member_form.text_field :town_area %>
+</p>
+
+<p>
+   <%= member_form.label :address , '番地' %>
+   <%= member_form.text_field :address %>
+</p>
+
+<p>
+    <%= member_form.label :building , '建物名' %>
+    <%= member_form.text_field :building %>
+</p>
+
+<p>
+    <%= member_form.label :room , '号棟・階数・号室' %>
+    <%= member_form.text_field :room %>
+</p>
+
+<% end %>
+
+
+<p><%= f.label :birth, '生年月日' %>
+<%= f.date_field :birth %></p>
+
+<p><%=f.label :work_place, '勤務先' %>
+<%= f.text_field :work_place %></p>
+
+<p><%= f.label :high_school ,'高校' %>
+<%= f.text_field :high_school %></p>
+
+<p><%= f.label :university, '大学' %>
+<%= f.text_field :university %></p>
+
+<p><%= f.label :graduate_school , '大学院' %>
+<%= f.text_field :graduate_school %></p>
+
+<p><%= f.label :email,'メールアドレス' %>
+<%= f.email_field :email %></p>
+
+<p><%= f.label :password,'パスワード'%>
+<%= f.password_field :password %></p>
+
+<p>
+    <%= f.label :password_confirmation , 'パスワード確認' %>
+    <%= f.password_field :password_cofirmation %>
+</p>
+
+<%= f.submit '登録' %>
+<% end %>

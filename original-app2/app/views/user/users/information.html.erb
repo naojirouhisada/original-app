@@ -1,0 +1,18 @@
+<div id="information" >
+
+    <% current_user.follower_relationships.each do |follower_relationship| %>
+    
+        <% unless follower_relationship.status == 'allow' %>
+        
+            <%= render partial: 'relatinoship_submit' , locals: {follower_relationship: follower_relationship} %>
+        <% end %>
+    <% end %>
+    
+    
+
+
+        
+    
+</div>
+
+
